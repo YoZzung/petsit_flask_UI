@@ -335,10 +335,16 @@ def test():
 
 	if not 'email' in session:
 		return redirect('/')
-		
-	if request.method == 'POST':
-		print(request.form)
 
-	return render_template("test_info.html",
+	# if request.method == 'GET':
+		# print(request.form)
+	data = function.Read_member()
+	print(data)
+
+	# if request.args['type'] == 'json':
+		# return jsonify(rooms = 'data')
+	# else:
+	return render_template("test_get_rooms.html",
                         title='progress',
-						session='OK')
+						session='OK',
+						rooms = data)
