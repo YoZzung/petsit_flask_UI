@@ -1,3 +1,6 @@
+var clicked_path = window.location.pathname
+var current_id = document.getElementById(clicked_path)
+current_id.setAttribute("aria-selected", true)
 
 function onClicked(elem) {
   if(elem.id == "create_using_email_button") {
